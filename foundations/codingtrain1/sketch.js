@@ -1,25 +1,25 @@
+var increment = 10;
+
+var circle = {
+	x: 0,
+	y: 100,
+	diameter: 50
+};
+
 function setup() {
 	createCanvas(windowWidth, windowHeight);
 	background(250, 250, 100);
 }
 
 function draw() {
-	// background(250, 250, 100);
-	// stroke(200, 200, 200);
-	// fill(100,100,100);
-	// rect(50, 50, 100, 100);
-	// stroke(250, 250, 250);
-	// fill(250, 100, 100);
-	// ellipse(mouseX, mouseY, 50, 50);
-
-	
-	// console.log(mouseX);
-
-	noStroke();
-	ellipse(mouseX, mouseY, 25, 25);
-	fill(250, 200, 200, 50);
-}
-
-function mousePressed(){
 	background(250, 250, 100);
+	fill(250, 200, 200);
+	ellipse(circle.x, circle.y, circle.diameter, circle.diameter);
+	
+	
+	circle.x = circle.x + increment;
+	if ((circle.x > windowWidth) || (circle.x < 0)){
+		increment = increment*(-1)
+	}
+
 }
